@@ -1,0 +1,9 @@
+export interface Restaurante{id:string;nome:string;slug:string;logo_url?:string;cor_primaria?:string;cor_destaque?:string;ativo:boolean}
+export interface Categoria{id:string;nome:string;ordem:number}
+export interface Produto{id:string;categoria_id:string;nome:string;descricao:string;preco:number;imagem_url:string;disponivel:boolean}
+export interface ItemPedidoPayload{produto_id:string;quantidade:number;observacao:string}
+export interface ItemCarrinho{produto_id:string;nome:string;quantidade:number;preco_unitario:number;observacao:string;imagem_url:string}
+export interface ItemPedido{id:string;produto_id:string;nome_produto:string;quantidade:number;preco_unitario:number;observacao?:string}
+export interface Pedido{id:string;numero_mesa:number;nome_cliente:string;status:'PENDENTE'|'PREPARANDO'|'PRONTO'|'CANCELADO'|'FECHADO';total:number;criado_em:string;itens:ItemPedido[]}
+export interface CriarPedido{numero_mesa:number;nome_cliente:string;itens:ItemPedidoPayload[]}
+export interface Chamado{id:string;numero_mesa:number;tipo:'GARCOM'|'FECHAR_CONTA';status:'ABERTO'|'ATENDIDO'|'FECHADO';criado_em:string}

@@ -1,0 +1,1 @@
+export default{content:['./index.html','./src/**/*.{ts,tsx}'],theme:{extend:{colors:{brand:'rgb(var(--brand)/<alpha-value>)',accent:'rgb(var(--accent)/<alpha-value>)',surface:'rgb(var(--surface)/<alpha-value>)'},boxShadow:{sheet:'0 -14px 50px rgba(15,23,42,.25)'}}},plugins:[]}
