@@ -1,5 +1,5 @@
 import type{Categoria,Chamado,CriarPedido,Pedido,Produto,Restaurante}from'../types';
-const BASE=import.meta.env.VITE_API_URL||'http://localhost:8080/api';
+const BASE=import.meta.env.VITE_API_URL||'https://restaurante-backend-vow0.onrender.com/api';
 async function request<T>(path:string,init?:RequestInit):Promise<T>{const r=await fetch(`${BASE}${path}`,{...init,headers:{'Content-Type':'application/json',...init?.headers}});const body=await r.json().catch(()=>null);if(!r.ok)throw new Error(body?.message||body?.error||`Não foi possível concluir a solicitação (${r.status})`);return body as T}
 export const api={
  restaurante:(slug:string)=>request<Restaurante>(`/public/${encodeURIComponent(slug)}`),
